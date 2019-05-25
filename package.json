@@ -1,0 +1,19 @@
+{
+  "name": "anti-peen-machine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelbpaulson/anti-peen-machine.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelbpaulson/anti-peen-machine/issues"
+  },
+  "homepage": "https://github.com/michaelbpaulson/anti-peen-machine#readme"
+}
