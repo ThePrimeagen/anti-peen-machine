@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/michaelbpaulson/anti-peen-machine/issues"
   },
-  "homepage": "https://github.com/michaelbpaulson/anti-peen-machine#readme"
+  "homepage": "https://github.com/michaelbpaulson/anti-peen-machine#readme",
+  "dependencies": {
+    "tmi.js": "^1.4.2"
+  }
 }
