@@ -5,6 +5,8 @@ const env = JSON.parse(fs.readFileSync(envPath).toString());
 
 const tmi = require('tmi.js');
 
+const levenshtein = require('./stages/levenshtein');
+
 const options = {
     options: { debug: true },
     connection: {
@@ -18,12 +20,20 @@ const client = new tmi.client(options);
 client.connect();
 
 // main point of contact
-client.on('chat', function(user, line, message, self) {
+const peenCheckers = require('./stages/peen-checkers');
+client.on('chat', function(channel, user, line, self) {
     if (self) {
         return;
     }
 
-    console.log(user.username, line);
+    // stage 1, find peen
+    if (!peenCheckers(line)) {
+        return;
+    }
+
+    // stage 2, delete message
+    client.timeout(channel, user.username, 1, `I have seen bigger ${user['display-name']}`);
+    client.say(channel, `Nice try ${user['display-name']}`);
 });
 
 
